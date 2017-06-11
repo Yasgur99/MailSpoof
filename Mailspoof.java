@@ -85,25 +85,25 @@ public class MailSpoof {
             PrintWriter writer = new PrintWriter(
                     new OutputStreamWriter(
                             socket.getOutputStream()));
-            System.out.println(reader.read());
+            System.out.println(reader.readLine());
             writer.write("HELO " + mailFrom.split("@")[1] + "\r\n");
             writer.flush();
-            System.out.println(reader.read());
+            System.out.println(reader.readLine());
             writer.write("MAIL FROM: <" + mailFrom + ">\r\n");
             writer.flush();
-            System.out.println(reader.read());
+            System.out.println(reader.readLine());
             writer.write("RCPT TO: <" + rcptTo + ">\r\n");
             writer.flush();
-            System.out.println(reader.read());
+            System.out.println(reader.readLine());
             writer.write("DATA\r\n");
             writer.flush();
-            System.out.println(reader.read());
+            System.out.println(reader.readLine());
             writer.write(data + "\r\n");
             writer.flush();
-            System.out.println(reader.read());
+            System.out.println(reader.readLine());
             writer.write("QUIT\r\n");
             writer.flush();
-            System.out.println(reader.read());
+            System.out.println(reader.readLine());
             return true;
         } catch (IOException ex) {
         }
