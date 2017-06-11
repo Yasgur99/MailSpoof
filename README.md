@@ -1,7 +1,8 @@
-#MailSpoof
+# MailSpoof
 
 a small Java program to send spoofed emails
 
-#Usage
+# Usage
 
-java -jar MailSpoof.java
+javac MailSpoof.java
+java MailSpoof
